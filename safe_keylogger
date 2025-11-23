@@ -1,0 +1,24 @@
+def main():
+    print("=== Safe Keylogger Demo (Cybersecurity Educational Tool) ===")
+    print("NOTE: This is NOT a real keylogger.")
+    print("It ONLY records what you type INSIDE this program.")
+    print("Type 'EXIT' to stop logging.\n")
+
+    log_file = "keylog_output.txt"
+
+    with open(log_file, "a", encoding="utf-8") as file:
+        while True:
+            user_input = input("> ")
+
+            if user_input.upper() == "EXIT":
+                print("\nLogging stopped.")
+                break
+
+            file.write(user_input + "\n")
+
+    print(f"\nAll logged input saved to: {log_file}")
+    print("This tool is for cybersecurity education ONLY.")
+
+
+if __name__ == "__main__":
+    main()
